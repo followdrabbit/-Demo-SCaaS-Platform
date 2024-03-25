@@ -1,27 +1,17 @@
 # SCaaS Platform
 
-SCaaS (Scan as a Service) Platform is an open-source solution designed to provide comprehensive security scanning services for operating system images. Built on AWS, it offers a robust and scalable infrastructure to automate the scanning process, ensuring that only secure and compliant images are used as golden images in your environment.
+![Demonstração do SCaaS](assets/scaas_test.gif)
 
-## Features
+Este repositório contém a demonstração de como criar um serviço automatizado que recebe chamadas de API para realizar ações específicas.
 
-- **API Gateway Integration**: Receive scan requests via a RESTful API.
-- **Automated Workflows**: Utilize AWS services like SNS, SQS, Lambda, and EC2 to automate the scanning process.
-- **Real-Time Notifications**: Get notified via email when scan requests are received and completed.
-- **Security Compliance Checks**: Validate images against predefined security standards before promoting them as golden images.
-- **Scheduled Scans**: Utilize cron jobs on EC2 instances to periodically check for scan results.
-- **Centralized Logging**: Collect and analyze logs for performance metrics, error rates, and other relevant statistics.
+## Objetivo
 
-## Getting Started
+O objetivo desta demonstração é processar uma chamada de API contendo o ID de uma Imagem de Máquina da Amazon (AMI) e executar as seguintes ações:
 
-### Prerequisites
+1. Validar se o JSON está dentro da estrutura correta.
+2. Verificar se a AMI especificada existe.
+3. Iniciar uma instância EC2 do tipo `t2.micro` utilizando a AMI fornecida, sem atribuir um IP público.
 
-- AWS account
-- AWS CLI configured
-- Basic understanding of AWS services (Lambda, SNS, SQS, EC2, S3)
+## Implementação
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/scaas-platform.git
-   cd scaas-platform
+O código necessário para reproduzir esta demonstração está disponível no arquivo `main.tf` do Terraform, localizado neste repositório.
